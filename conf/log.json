@@ -1,0 +1,18 @@
+{
+    "LogLevel" : "trace",
+
+    "FileWriter" : {
+        "On": true,
+
+        "LogPath" : "log/frontEnd.log.info",
+        "RotateLogPath" : "log/frontEnd.log.info.%Y%M%D",
+
+        "WfLogPath" : "log/frontEnd.log.wf",
+        "RotateWfLogPath" : "log/frontEnd.log.wf.%Y%M%D"
+    },
+
+    "ConsoleWriter" : {
+        "On" : true,
+        "Color" : true
+    }
+}
