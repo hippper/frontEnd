@@ -6,7 +6,7 @@ ulimit -c unlimited
 start(){
 	stop
 	sleep 1
-	setsid /apps/frontEnd/bin/supervise.frontEnd env GOTRACEBACK=crash /apps/frontEnd -config /apps/frontEnd/conf/frontEnd.toml
+	setsid /apps/frontEnd/bin/supervise.frontEnd -u /apps/frontEnd/status/frontEnd env GOTRACEBACK=crash /apps/frontEnd/bin/frontEnd -config /apps/frontEnd/conf/frontEnd.toml
 }
 
 stop(){

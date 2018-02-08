@@ -8,6 +8,7 @@ rm -rf frontEnd.zip
 mkdir -p output/bin
 mkdir -p output/conf
 mkdir -p output/log
+mkdir -p output/status/frontEnd
 make
 
 cp load.sh output/load.sh
