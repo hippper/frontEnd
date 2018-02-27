@@ -50,6 +50,17 @@ func (s *WebServer) HtmlFiles(c *gin.Context) {
 	switch file {
 	case define.HTML_INDEX:
 		c.HTML(http.StatusOK, file, nil)
+		UserName := "None"
+		if auth_cookie, err := c.Request.Cookie(Cookie_auth_key); err == nil {
+			if userInfo, ok := authMap[auth_cookie.Value]; ok {
+				UserName = userInfo.UserName
+			}
+		}
+		c.HTML(http.StatusOK, file, gin.H{
+			"UserName": UserName,
+		})
+	default:
+		c.HTML(http.StatusOK, file, nil)
 	}
 }
 
