@@ -9,6 +9,7 @@ mkdir -p output/bin
 mkdir -p output/conf
 mkdir -p output/log
 mkdir -p output/status/frontEnd
+
 make
 
 cp load.sh output/load.sh
@@ -19,3 +20,6 @@ cp conf/frontEnd.toml output/conf/frontEnd.toml
 cp conf/log.json output/conf/log.json
 cp -r static output/
 cp -r templates output/
+
+chmod +x output/*.sh
+chmod +x output/bin/*

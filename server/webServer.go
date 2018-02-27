@@ -25,6 +25,12 @@ func (s *WebServer) StartServer() error {
 	router.Static("/css", "./static/css")
 	router.Static("/fonts", "./static/fonts")
 
+	router.GET("/login.html", s.HtmlFiles)
+	router.POST("/userlogin", s.UserLogin)
+	router.GET("/userlogout", s.UserLogout)
+
+	router.Use(AuthMiddleWare())
+
 	router.NoRoute(func(c *gin.Context) {
 		c.HTML(http.StatusNotFound, "404.html", nil)
 	})
